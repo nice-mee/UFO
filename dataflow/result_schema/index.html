@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Result Schema - UFO Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Result Schema";
+        var mkdocs_page_input_path = "dataflow/result_schema.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> UFO Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../project_directory_structure/">Project Directory Structure</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting_started/quick_start/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting_started/more_guidance/">More Guidance</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic Modules</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modules/session/">Session</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modules/round/">Round</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modules/context/">Context</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Configurations</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../configurations/user_configuration/">User Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../configurations/developer_configuration/">Developer Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../configurations/pricing_configuration/">Model Pricing</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Supported Models</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../supported_models/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../supported_models/openai/">OpenAI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../supported_models/azure_openai/">Azure OpenAI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../supported_models/gemini/">Gemini</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../supported_models/claude/">Claude</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../supported_models/qwen/">Qwen</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../supported_models/ollama/">Ollama</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../supported_models/custom_model/">Custom Model</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Agents</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../agents/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Agent Design</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../agents/design/memory/">Memory</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../agents/design/blackboard/">Blackboard</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../agents/design/state/">State</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../agents/design/prompter/">Prompter</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../agents/design/processor/">Processor</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../agents/host_agent/">HostAgent</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../agents/app_agent/">AppAgent</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../agents/follower_agent/">FollowerAgent</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../agents/evaluation_agent/">EvaluationAgent</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Prompts</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../prompts/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../prompts/basic_template/">Basic Prompts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../prompts/examples_prompts/">Examples Prompts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../prompts/api_prompts/">API Prompts</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Automator</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../automator/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../automator/ui_automator/">UI Automator</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../automator/wincom_automator/">API Automator</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../automator/web_automator/">Web Automator</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../automator/bash_automator/">Bash Automator</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../automator/ai_tool_automator/">AI Tool</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Logs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../logs/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../logs/request_logs/">Request Logs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../logs/step_logs/">Step Logs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../logs/evaluation_logs/">Evaluation Logs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../logs/screenshots_logs/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../logs/ui_tree_logs/">UI Tree</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Advanced Usage</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Reinforcing AppAgent</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../advanced_usage/reinforce_appagent/overview/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../advanced_usage/reinforce_appagent/learning_from_help_document/">Learning from Help Document</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../advanced_usage/reinforce_appagent/learning_from_bing_search/">Learning from Bing Search</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../advanced_usage/reinforce_appagent/experience_learning/">Experience Learning</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../advanced_usage/reinforce_appagent/learning_from_demonstration/">Learning from User Demonstration</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../advanced_usage/follower_mode/">Follower Mode</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../advanced_usage/batch_mode/">Batch Mode</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Control Filtering</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../advanced_usage/control_filtering/overview/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../advanced_usage/control_filtering/text_filtering/">Text Filtering</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../advanced_usage/control_filtering/semantic_filtering/">Semantic Filtering</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../advanced_usage/control_filtering/icon_filtering/">Icon Filtering</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../advanced_usage/customization/">Customization</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Creating Your AppAgent</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../creating_app_agent/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../creating_app_agent/help_document_provision/">Help Document Provision</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../creating_app_agent/demonstration_provision/">Demonstration Provision</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../creating_app_agent/warpping_app_native_api/">Warpping App-Native API</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dataflow</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../instantiation/">Instantiation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../execution/">Execution</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../windows_app_env/">Windows App Environment</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Result Schema</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#instantiation-result-schema">Instantiation Result Schema</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#root-structure">Root Structure</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#field-descriptions">Field Descriptions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-data">Example Data</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#execution-result-schema">Execution Result Schema</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#top-level-fields">Top-Level Fields</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#required-fields">Required Fields</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-data_1">Example Data</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">About</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../about/CONTRIBUTING/">Contributing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../about/LICENSE/">License</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../about/CODE_OF_CONDUCT/">Code of Conduct</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../about/DISCLAIMER/">Disclaimer</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../about/SUPPORT/">Support</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../faq/">FAQ</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">UFO Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Dataflow</li>
+      <li class="breadcrumb-item active">Result Schema</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="result-schema">Result schema</h1>
+<h2 id="instantiation-result-schema">Instantiation Result Schema</h2>
+<p>This schema defines the structure of a JSON object that might be used to represent the results of task <code>instantiation</code>. </p>
+<h4 id="root-structure"><strong>Root Structure</strong></h4>
+<ul>
+<li>The schema is an object with the following key fields:</li>
+<li><strong><code>unique_id</code></strong>: A string serving as the unique identifier for the task.</li>
+<li><strong><code>app</code></strong>: A string representing the application where the task is being executed.</li>
+<li><strong><code>original</code></strong>: An object containing details about the original task.</li>
+</ul>
+<h4 id="field-descriptions"><strong>Field Descriptions</strong></h4>
+<ol>
+<li><strong><code>unique_id</code></strong>  </li>
+<li>Type: <code>string</code>  </li>
+<li>
+<p>Purpose: Provides a globally unique identifier for the task.</p>
+</li>
+<li>
+<p><strong><code>app</code></strong>  </p>
+</li>
+<li>Type: <code>string</code>  </li>
+<li>
+<p>Purpose: Specifies the application associated with the task execution.</p>
+</li>
+<li>
+<p><strong><code>original</code></strong>  </p>
+</li>
+<li>Type: <code>object</code>  </li>
+<li>
+<p>Contains the following fields:</p>
+<ul>
+<li><strong><code>original_task</code></strong>:  </li>
+<li>Type: <code>string</code>  </li>
+<li>Purpose: Describes the main task in textual form.  </li>
+<li><strong><code>original_steps</code></strong>:  </li>
+<li>Type: <code>array</code> of <code>string</code>  </li>
+<li>Purpose: Lists the sequential steps required for the task.</li>
+</ul>
+</li>
+<li>
+<p>Required fields: <code>original_task</code>, <code>original_steps</code></p>
+</li>
+<li>
+<p><strong><code>execution_result</code></strong>  </p>
+</li>
+<li>Type: <code>object</code> or <code>null</code>  </li>
+<li>Contains fields describing the results of task execution:<ul>
+<li><strong><code>result</code></strong>: Always <code>null</code>, indicating no execution results are included.  </li>
+<li><strong><code>error</code></strong>: Always <code>null</code>, implying execution errors are not tracked in this schema.  </li>
+</ul>
+</li>
+<li>
+<p>Purpose: Simplifies the structure by omitting detailed execution results.</p>
+</li>
+<li>
+<p><strong><code>instantiation_result</code></strong>  </p>
+</li>
+<li>Type: <code>object</code>  </li>
+<li>
+<p>Contains fields detailing the results of task instantiation:</p>
+<ul>
+<li><strong><code>choose_template</code></strong>:  </li>
+<li>Type: <code>object</code>  </li>
+<li>Fields:  <ul>
+<li><strong><code>result</code></strong>: A string or <code>null</code>, representing the outcome of template selection.  </li>
+<li><strong><code>error</code></strong>: A string or <code>null</code>, detailing any errors during template selection.  </li>
+</ul>
+</li>
+<li>Required fields: <code>result</code>, <code>error</code></li>
+<li><strong><code>prefill</code></strong>:  </li>
+<li>Type: <code>object</code> or <code>null</code>  </li>
+<li>Contains results of pre-filling instantiation:<ul>
+<li><strong><code>result</code></strong>:  </li>
+<li>Type: <code>object</code> or <code>null</code>  </li>
+<li>Fields:  <ul>
+<li><strong><code>instantiated_request</code></strong>: A string, representing the generated request.  </li>
+<li><strong><code>instantiated_plan</code></strong>: An array or <code>null</code>, listing instantiation steps:</li>
+<li><strong><code>Step</code></strong>: An integer representing the sequence of the step.  </li>
+<li><strong><code>Subtask</code></strong>: A string describing the subtask.  </li>
+<li><strong><code>ControlLabel</code></strong>: A string or <code>null</code>, representing the control label.  </li>
+<li><strong><code>ControlText</code></strong>: A string, providing context for the step.  </li>
+<li><strong><code>Function</code></strong>: A string, specifying the function executed at this step.  </li>
+<li><strong><code>Args</code></strong>: An object, containing any arguments required by the function.  </li>
+<li>Required fields: <code>Step</code>, <code>Subtask</code>, <code>Function</code>, <code>Args</code></li>
+</ul>
+</li>
+<li>Required fields: <code>instantiated_request</code>, <code>instantiated_plan</code>  </li>
+<li><strong><code>error</code></strong>: A string or <code>null</code>, describing errors encountered during prefill.  </li>
+</ul>
+</li>
+<li>Required fields: <code>result</code>, <code>error</code></li>
+<li><strong><code>instantiation_evaluation</code></strong>:  </li>
+<li>Type: <code>object</code>  </li>
+<li>Fields:  <ul>
+<li><strong><code>result</code></strong>:  </li>
+<li>Type: <code>object</code> or <code>null</code>  </li>
+<li>Contains:  <ul>
+<li><strong><code>judge</code></strong>: A boolean, indicating whether the instantiation is valid.  </li>
+<li><strong><code>thought</code></strong>: A string, providing reasoning or observations.  </li>
+<li><strong><code>request_type</code></strong>: A string, classifying the request type.  </li>
+</ul>
+</li>
+<li>Required fields: <code>judge</code>, <code>thought</code>, <code>request_type</code>  </li>
+<li><strong><code>error</code></strong>: A string or <code>null</code>, indicating errors during evaluation.  </li>
+</ul>
+</li>
+<li>Required fields: <code>result</code>, <code>error</code></li>
+</ul>
+</li>
+<li>
+<p><strong><code>time_cost</code></strong>  </p>
+</li>
+<li>Type: <code>object</code>  </li>
+<li>Tracks time metrics for various stages of task instantiation:<ul>
+<li><strong><code>choose_template</code></strong>: A number or <code>null</code>, time spent selecting a template.  </li>
+<li><strong><code>prefill</code></strong>: A number or <code>null</code>, time used for pre-filling.  </li>
+<li><strong><code>instantiation_evaluation</code></strong>: A number or <code>null</code>, time spent on evaluation.  </li>
+<li><strong><code>total</code></strong>: A number or <code>null</code>, total time cost for all processes.  </li>
+</ul>
+</li>
+<li>Required fields: <code>choose_template</code>, <code>prefill</code>, <code>instantiation_evaluation</code>, <code>total</code></li>
+</ol>
+<hr />
+<h3 id="example-data">Example Data</h3>
+<pre><code class="language-json">{
+    &quot;unique_id&quot;: &quot;5&quot;,
+    &quot;app&quot;: &quot;word&quot;,
+    &quot;original&quot;: {
+        &quot;original_task&quot;: &quot;Turning lines of text into a bulleted list in Word&quot;,
+        &quot;original_steps&quot;: [
+            &quot;1. Place the cursor at the beginning of the line of text you want to turn into a bulleted list&quot;,
+            &quot;2. Click the Bullets button in the Paragraph group on the Home tab and choose a bullet style&quot;
+        ]
+    },
+    &quot;execution_result&quot;: {
+        &quot;result&quot;: null,
+        &quot;error&quot;: null
+    },
+    &quot;instantiation_result&quot;: {
+        &quot;choose_template&quot;: {
+            &quot;result&quot;: &quot;dataflow\\results\\saved_document\\bulleted.docx&quot;,
+            &quot;error&quot;: null
+        },
+        &quot;prefill&quot;: {
+            &quot;result&quot;: {
+                &quot;instantiated_request&quot;: &quot;Turn the line of text 'text to edit' into a bulleted list in Word.&quot;,
+                &quot;instantiated_plan&quot;: [
+                    {
+                        &quot;Step&quot;: 1,
+                        &quot;Subtask&quot;: &quot;Place the cursor at the beginning of the text 'text to edit'&quot;,
+                        &quot;ControlLabel&quot;: null,
+                        &quot;ControlText&quot;: &quot;&quot;,
+                        &quot;Function&quot;: &quot;select_text&quot;,
+                        &quot;Args&quot;: {
+                            &quot;text&quot;: &quot;text to edit&quot;
+                        }
+                    },
+                    {
+                        &quot;Step&quot;: 2,
+                        &quot;Subtask&quot;: &quot;Click the Bullets button in the Paragraph group on the Home tab&quot;,
+                        &quot;ControlLabel&quot;: null,
+                        &quot;ControlText&quot;: &quot;Bullets&quot;,
+                        &quot;Function&quot;: &quot;click_input&quot;,
+                        &quot;Args&quot;: {
+                            &quot;button&quot;: &quot;left&quot;,
+                            &quot;double&quot;: false
+                        }
+                    }
+                ]
+            },
+            &quot;error&quot;: null
+        },
+        &quot;instantiation_evaluation&quot;: {
+            &quot;result&quot;: {
+                &quot;judge&quot;: true,
+                &quot;thought&quot;: &quot;The task is specific and involves a basic function in Word that can be executed locally without any external dependencies.&quot;,
+                &quot;request_type&quot;: &quot;None&quot;
+            },
+            &quot;error&quot;: null
+        }
+    },
+    &quot;time_cost&quot;: {
+        &quot;choose_template&quot;: 0.012,
+        &quot;prefill&quot;: 15.649,
+        &quot;instantiation_evaluation&quot;: 2.469,
+        &quot;execute&quot;: null,
+        &quot;execute_eval&quot;: null,
+        &quot;total&quot;: 18.130
+    }
+}
+</code></pre>
+<h2 id="execution-result-schema">Execution Result Schema</h2>
+<p>This schema defines the structure of a JSON object that might be used to represent the results of task <code>execution</code> or <code>dataflow</code>. Below are the main fields and their detailed descriptions.</p>
+<p>Unlike the instantiation result, the execution result schema provides detailed feedback on execution, including success metrics (<code>reason</code>, <code>sub_scores</code>). Additionally, based on the original instantiated_plan, each step has been enhanced with the fields <code>Success</code> and <code>MatchedControlText</code>, which represent whether the step executed successfully (success is indicated by no errors) and the name of the last matched control, respectively. The <code>ControlLabel</code> will also be updated to reflect the final selected ControlLabel.</p>
+<hr />
+<h3 id="top-level-fields"><strong>Top-Level Fields</strong></h3>
+<ol>
+<li>
+<p><strong><code>unique_id</code></strong></p>
+</li>
+<li>
+<p><strong>Type</strong>: <code>string</code></p>
+</li>
+<li><strong>Description</strong>: A unique identifier for the task or record.</li>
+<li>
+<p><strong><code>app</code></strong></p>
+</li>
+<li>
+<p><strong>Type</strong>: <code>string</code></p>
+</li>
+<li><strong>Description</strong>: The name of the application associated with the task.</li>
+<li>
+<p><strong><code>original</code></strong></p>
+</li>
+<li>
+<p><strong>Type</strong>: <code>object</code></p>
+</li>
+<li><strong>Description</strong>: Contains the original definition of the task.</li>
+<li><strong>Properties</strong>:<ul>
+<li><strong><code>original_task</code></strong>:</li>
+<li><strong>Type</strong>: <code>string</code></li>
+<li><strong>Description</strong>: The original description of the task.</li>
+<li><strong><code>original_steps</code></strong>:</li>
+<li><strong>Type</strong>: <code>array</code></li>
+<li><strong>Description</strong>: An array of strings representing the steps of the task.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>execution_result</code></strong></p>
+</li>
+<li>
+<p><strong>Type</strong>: <code>object</code> or <code>null</code></p>
+</li>
+<li><strong>Description</strong>: Represents the results of the task execution.</li>
+<li><strong>Properties</strong>:<ul>
+<li><strong><code>result</code></strong>:</li>
+<li><strong>Type</strong>: <code>object</code> or <code>null</code></li>
+<li><strong>Description</strong>: Contains the details of the execution result.</li>
+<li><strong>Sub-properties</strong>:<ul>
+<li><strong><code>reason</code></strong>: The reason for the execution result, type <code>string</code>.</li>
+<li><strong><code>sub_scores</code></strong>: A set of sub-scores, represented as key-value pairs (<code>.*</code> allows any key pattern).</li>
+<li><strong><code>complete</code></strong>: Indicates the completion status, type <code>string</code>.</li>
+</ul>
+</li>
+<li><strong><code>error</code></strong>:</li>
+<li><strong>Type</strong>: <code>object</code> or <code>null</code></li>
+<li><strong>Description</strong>: Represents any error information encountered during execution.</li>
+<li><strong>Sub-properties</strong>:<ul>
+<li><strong><code>type</code></strong>: The type of error, type <code>string</code>.</li>
+<li><strong><code>message</code></strong>: The error message, type <code>string</code>.</li>
+<li><strong><code>traceback</code></strong>: The error traceback, type <code>string</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>instantiation_result</code></strong></p>
+</li>
+<li>
+<p><strong>Type</strong>: <code>object</code></p>
+</li>
+<li><strong>Description</strong>: Contains results related to task instantiation.</li>
+<li><strong>Properties</strong>:<ul>
+<li><strong><code>choose_template</code></strong>:</li>
+<li><strong>Type</strong>: <code>object</code></li>
+<li><strong>Description</strong>: Results of template selection.</li>
+<li><strong>Sub-properties</strong>:<ul>
+<li><strong><code>result</code></strong>: The result of template selection, type <code>string</code> or <code>null</code>.</li>
+<li><strong><code>error</code></strong>: Error information, type <code>null</code> or <code>string</code>.</li>
+</ul>
+</li>
+<li><strong><code>prefill</code></strong>:</li>
+<li><strong>Type</strong>: <code>object</code> or <code>null</code></li>
+<li><strong>Description</strong>: Results of the prefill phase.</li>
+<li><strong>Sub-properties</strong>:<ul>
+<li><strong><code>result</code></strong>:</li>
+<li><strong>Type</strong>: <code>object</code> or <code>null</code></li>
+<li><strong>Description</strong>: Contains the instantiated request and plan.</li>
+<li><strong>Sub-properties</strong>:<ul>
+<li><strong><code>instantiated_request</code></strong>: The instantiated task request, type <code>string</code>.</li>
+<li><strong><code>instantiated_plan</code></strong>: The instantiated task plan, type <code>array</code> or <code>null</code>.</li>
+<li>Each item in the array is an object with:<ul>
+<li><strong><code>Step</code></strong>: Step number, type <code>integer</code>.</li>
+<li><strong><code>Subtask</code></strong>: Description of the subtask, type <code>string</code>.</li>
+<li><strong><code>ControlLabel</code></strong>: Control label, type <code>string</code> or <code>null</code>.</li>
+<li><strong><code>ControlText</code></strong>: Control text, type <code>string</code>.</li>
+<li><strong><code>Function</code></strong>: Function name, type <code>string</code>.</li>
+<li><strong><code>Args</code></strong>: Arguments to the function, type <code>object</code>.</li>
+<li><strong><code>Success</code></strong>: Whether the step succeeded, type <code>boolean</code> or <code>null</code>.</li>
+<li><strong><code>MatchedControlText</code></strong>: Matched control text, type <code>string</code> or <code>null</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>error</code></strong>: Prefill error information, type <code>null</code> or <code>string</code>.</li>
+</ul>
+</li>
+<li><strong><code>instantiation_evaluation</code></strong>:</li>
+<li><strong>Type</strong>: <code>object</code></li>
+<li><strong>Description</strong>: Results of task instantiation evaluation.</li>
+<li><strong>Sub-properties</strong>:<ul>
+<li><strong><code>result</code></strong>:</li>
+<li><strong>Type</strong>: <code>object</code> or <code>null</code></li>
+<li><strong>Description</strong>: Contains evaluation information.</li>
+<li><strong>Sub-properties</strong>:<ul>
+<li><strong><code>judge</code></strong>: Whether the evaluation succeeded, type <code>boolean</code>.</li>
+<li><strong><code>thought</code></strong>: Evaluator's thoughts, type <code>string</code>.</li>
+<li><strong><code>request_type</code></strong>: The type of request, type <code>string</code>.</li>
+</ul>
+</li>
+<li><strong><code>error</code></strong>: Evaluation error information, type <code>null</code> or <code>string</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>time_cost</code></strong></p>
+</li>
+<li>
+<p><strong>Type</strong>: <code>object</code></p>
+</li>
+<li><strong>Description</strong>: Represents the time costs for various phases.</li>
+<li><strong>Properties</strong>:<ul>
+<li><strong><code>choose_template</code></strong>: Time spent selecting the template, type <code>number</code> or <code>null</code>.</li>
+<li><strong><code>prefill</code></strong>: Time spent in the prefill phase, type <code>number</code> or <code>null</code>.</li>
+<li><strong><code>instantiation_evaluation</code></strong>: Time spent in instantiation evaluation, type <code>number</code> or <code>null</code>.</li>
+<li><strong><code>total</code></strong>: Total time cost, type <code>number</code> or <code>null</code>.</li>
+<li><strong><code>execute</code></strong>: Time spent in execution, type <code>number</code> or <code>null</code>.</li>
+<li><strong><code>execute_eval</code></strong>: Time spent in execution evaluation, type <code>number</code> or <code>null</code>.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="required-fields"><strong>Required Fields</strong></h3>
+<p>The fields <code>unique_id</code>, <code>app</code>, <code>original</code>, <code>execution_result</code>, <code>instantiation_result</code>, and <code>time_cost</code> are required for the JSON object to be valid.</p>
+<h3 id="example-data_1">Example Data</h3>
+<pre><code class="language-json">{
+    &quot;unique_id&quot;: &quot;5&quot;,
+    &quot;app&quot;: &quot;word&quot;,
+    &quot;original&quot;: {
+        &quot;original_task&quot;: &quot;Turning lines of text into a bulleted list in Word&quot;,
+        &quot;original_steps&quot;: [
+            &quot;1. Place the cursor at the beginning of the line of text you want to turn into a bulleted list&quot;,
+            &quot;2. Click the Bullets button in the Paragraph group on the Home tab and choose a bullet style&quot;
+        ]
+    },
+    &quot;execution_result&quot;: {
+        &quot;result&quot;: {
+            &quot;reason&quot;: &quot;The agent successfully selected the text 'text to edit' and then clicked on the 'Bullets' button in the Word application. The final screenshot shows that the text 'text to edit' has been converted into a bulleted list.&quot;,
+            &quot;sub_scores&quot;: {
+                &quot;text selection&quot;: &quot;yes&quot;,
+                &quot;bulleted list conversion&quot;: &quot;yes&quot;
+            },
+            &quot;complete&quot;: &quot;yes&quot;
+        },
+        &quot;error&quot;: null
+    },
+    &quot;instantiation_result&quot;: {
+        &quot;choose_template&quot;: {
+            &quot;result&quot;: &quot;dataflow\\results\\saved_document\\bulleted.docx&quot;,
+            &quot;error&quot;: null
+        },
+        &quot;prefill&quot;: {
+            &quot;result&quot;: {
+                &quot;instantiated_request&quot;: &quot;Turn the line of text 'text to edit' into a bulleted list in Word.&quot;,
+                &quot;instantiated_plan&quot;: [
+                    {
+                        &quot;Step&quot;: 1,
+                        &quot;Subtask&quot;: &quot;Place the cursor at the beginning of the text 'text to edit'&quot;,
+                        &quot;ControlLabel&quot;: null,
+                        &quot;ControlText&quot;: &quot;&quot;,
+                        &quot;Function&quot;: &quot;select_text&quot;,
+                        &quot;Args&quot;: {
+                            &quot;text&quot;: &quot;text to edit&quot;
+                        },
+                        &quot;Success&quot;: true,
+                        &quot;MatchedControlText&quot;: null
+                    },
+                    {
+                        &quot;Step&quot;: 2,
+                        &quot;Subtask&quot;: &quot;Click the Bullets button in the Paragraph group on the Home tab&quot;,
+                        &quot;ControlLabel&quot;: &quot;61&quot;,
+                        &quot;ControlText&quot;: &quot;Bullets&quot;,
+                        &quot;Function&quot;: &quot;click_input&quot;,
+                        &quot;Args&quot;: {
+                            &quot;button&quot;: &quot;left&quot;,
+                            &quot;double&quot;: false
+                        },
+                        &quot;Success&quot;: true,
+                        &quot;MatchedControlText&quot;: &quot;Bullets&quot;
+                    }
+                ]
+            },
+            &quot;error&quot;: null
+        },
+        &quot;instantiation_evaluation&quot;: {
+            &quot;result&quot;: {
+                &quot;judge&quot;: true,
+                &quot;thought&quot;: &quot;The task is specific and involves a basic function in Word that can be executed locally without any external dependencies.&quot;,
+                &quot;request_type&quot;: &quot;None&quot;
+            },
+            &quot;error&quot;: null
+        }
+    },
+    &quot;time_cost&quot;: {
+        &quot;choose_template&quot;: 0.012,
+        &quot;prefill&quot;: 15.649,
+        &quot;instantiation_evaluation&quot;: 2.469,
+        &quot;execute&quot;: 5.824,
+        &quot;execute_eval&quot;: 8.702,
+        &quot;total&quot;: 43.522
+    }
+}
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../windows_app_env/" class="btn btn-neutral float-left" title="Windows App Environment"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../about/CONTRIBUTING/" class="btn btn-neutral float-right" title="Contributing">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../windows_app_env/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../about/CONTRIBUTING/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
