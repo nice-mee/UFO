@@ -47,6 +47,7 @@ class ActionExecutionLog:
 
     status: str = ""
     error: str = ""
+    traceback: str = ""
     return_value: Any = None
 
 
@@ -147,8 +148,6 @@ class OneStepAction:
     def command_string(self) -> str:
         """
         Generate a function call string.
-        :param command_name: The function name.
-        :param params: The arguments as a dictionary.
         :return: The function call string.
         """
         # Format the arguments
@@ -160,8 +159,7 @@ class OneStepAction:
     def is_same_action(self, action_to_compare: Dict[str, Any]) -> bool:
         """
         Check whether the two actions are the same.
-        :param action1: The first action.
-        :param action2: The second action.
+        :param action_to_compare: The action to compare with the current action.
         :return: Whether the two actions are the same.
         """
 
@@ -226,14 +224,17 @@ class OneStepAction:
         """
         try:
             control.is_enabled()
-            return True
+            if control.is_enabled() and control.is_visible():
+                return True
+            else:
+                return False
         except:
             return False
 
     def execute(self, puppeteer: AppPuppeteer) -> Any:
         """
         Execute the action.
-        :param executor: The executor.
+        :param puppeteer: The puppeteer that controls the application.
         """
         return puppeteer.execute_command(self.function, self.args)
 
@@ -245,8 +246,9 @@ class OneStepAction:
     ) -> Tuple[ActionExecutionLog, BaseControlLog]:
         """
         Execute the action flow.
-        :param action: The action.
+        :param puppeteer: The puppeteer that controls the application.
         :param control_dict: The control dictionary.
+        :param application_window: The application window where the control is located.
         :return: The action execution log.
         """
         control_selected: UIAWrapper = control_dict.get(self.control_label, None)
@@ -257,6 +259,7 @@ class OneStepAction:
         ):
             self.results = ActionExecutionLog(
                 status="error",
+                traceback="Control is not available.",
                 error="Control is not available.",
             )
             self._control_log = BaseControlLog()
@@ -290,8 +293,12 @@ class OneStepAction:
                 )
 
             except Exception as e:
+
+                import traceback
+
                 self.results = ActionExecutionLog(
                     status="error",
+                    traceback=traceback.format_exc(),
                     error=str(e),
                 )
             return self.results
@@ -353,6 +360,19 @@ class OneStepAction:
             "Execution result📜: {result}".format(result=asdict(self.results)),
             result_color,
         )
+
+    def get_operation_point_list(self) -> List[Tuple[int]]:
+        """
+        Get the operation points of the action.
+        :return: The operation points of the action.
+        """
+
+        if "path" in self.args:
+            return [(point["x"], point["y"]) for point in self.args["path"]]
+        elif "x" in self.args and "y" in self.args:
+            return [(self.args["x"], self.args["y"])]
+        else:
+            return []
 
 
 class ActionSequence:
