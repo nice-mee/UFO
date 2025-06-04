@@ -318,7 +318,7 @@ class OneStepAction:
         if not control_selected or not application_window:
             return BaseControlLog()
 
-        control_coordinates = PhotographerDecorator.coordinate_adjusted(
+        control_coordinates = utils.coordinate_adjusted(
             application_window.rectangle(), control_selected.rectangle()
         )
 
