@@ -31,7 +31,7 @@ from ufo.cs.contracts import (
 from ufo.automator.ui_control.inspector import ControlInspectorFacade
 from ufo.automator.ui_control.screenshot import PhotographerFacade
 from ufo.automator.ui_control.grounding.basic import BasicGrounding
-from ufo.config.config import Config
+from ufo.config import Config
 
 configs = Config.get_instance().config_data
 
